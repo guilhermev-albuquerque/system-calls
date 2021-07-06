@@ -1,5 +1,6 @@
-import { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { AuthContext } from '../contexts/auth';
 
 function RouteWrapper({ component: Component, isPrivate, ...rest }) {
@@ -19,5 +20,10 @@ function RouteWrapper({ component: Component, isPrivate, ...rest }) {
 
   return <Route {...rest} render={(props) => <Component {...props} />} />;
 }
+
+RouteWrapper.propTypes = {
+  isPrivate: PropTypes.bool,
+  component: PropTypes.func,
+};
 
 export default RouteWrapper;

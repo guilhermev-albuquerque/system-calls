@@ -1,4 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import PropTypes from 'prop-types';
+
 import firebase from '../services/firebaseConnection';
 
 export const AuthContext = createContext({});
@@ -50,6 +53,7 @@ function AuthProvider({ children }) {
       })
       .catch((error) => {
         console.log(error);
+        toast.error('Something is wrong :(');
         setLoadingAuth(false);
       });
   }
@@ -80,10 +84,12 @@ function AuthProvider({ children }) {
             setUser(data);
             storageUser(data);
             setLoadingAuth(false);
+            toast.success(`Hi, ${name}, you're welcome!`);
           });
       })
       .catch((error) => {
         console.log(error);
+        toast.error('Something is wrong :(');
         setLoadingAuth(false);
       });
   }
@@ -108,11 +114,17 @@ function AuthProvider({ children }) {
         signOut,
         signIn,
         loadingAuth,
+        setUser,
+        storageUser,
       }}
     >
       {children}
     </AuthContext.Provider>
   );
 }
+
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default AuthProvider;
