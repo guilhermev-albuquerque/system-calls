@@ -21,9 +21,9 @@ function Header() {
         <FiHome color="#FFF" size={24} />
         Calls
       </Link>
-      <Link to="/costumers">
+      <Link to="/customers">
         <FiUser color="#FFF" size={24} />
-        Clients
+        Customers
       </Link>
       <Link to="/profile">
         <FiSettings color="#FFF" size={24} />

@@ -105,15 +105,15 @@ function Profile() {
                   {avatarUrl === null ? (
                     <img
                       src={avatar}
-                      width="250"
-                      height="250"
+                      width="280"
+                      height="280"
                       alt="User photo profile"
                     />
                   ) : (
                     <img
                       src={avatarUrl}
-                      width="250"
-                      height="250"
+                      width="280"
+                      height="280"
                       alt="User photo profile"
                     />
                   )}
