@@ -4,6 +4,7 @@ import Customers from '../pages/Customers';
 import Profile from '../pages/Profile';
 import SignIn from '../pages/SignIn';
 import SingUp from '../pages/SignUp';
+import New from '../pages/New';
 import Route from './Routes';
 
 function Routes() {
@@ -15,6 +16,7 @@ function Routes() {
       <Route exact path="/dashboard" component={Dashboard} isPrivate />
       <Route exact path="/customers" component={Customers} isPrivate />
       <Route exact path="/profile" component={Profile} isPrivate />
+      <Route exact path="/new" component={New} isPrivate />
     </Switch>
   );
 }

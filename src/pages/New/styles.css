@@ -1,0 +1,23 @@
+.container {
+  background-color: #f8f8f8;
+}
+
+form textarea {
+  height: 95px;
+  resize: none;
+}
+
+form input[type="radio"] {
+  margin: 15px 0;
+}
+
+form input[type="radio"]:not(:first-child) {
+  margin-left: 15px;
+}
+
+form .status {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
